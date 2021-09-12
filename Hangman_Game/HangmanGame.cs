@@ -19,11 +19,14 @@ namespace Hangman_Game
             mysteryList = d.MakeList();
             while(gameOver == false)
                 {
+                Console.WriteLine($"you have {turnsLeft} turns left");
+                Console.WriteLine($"The Mystery word is: \n" );
+                DashPrinter.printDashes(guessList, mysteryList);
                 Console.WriteLine("type '*' to quit");
                 string userCommand = Console.ReadLine().ToLower();
                 switch (userCommand)
                 {
-                    case "exit":
+                    case "*":
                         Console.WriteLine("goodbye");
                         gameOver = true;
                         break;

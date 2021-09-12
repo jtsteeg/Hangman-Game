@@ -11,7 +11,7 @@ namespace Hangman_Game
         private List<string> wordLibrary;
         public WordToList()
         {
-            List<string> wordLibrary = new List<string>() { "table", "chair", "lamp", "desk", "chandelier" };
+             wordLibrary = new List<string>() { "table", "chair", "lamp", "desk", "chandelier" };
         }
 
 
