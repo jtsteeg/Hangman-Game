@@ -8,6 +8,7 @@ namespace Hangman_Game
 {
     class HangmanGame
     {
+
         bool gameOver = false;
         int turnsLeft = 10;
         List<char> mysteryList = new List<char>();
@@ -20,20 +21,33 @@ namespace Hangman_Game
             while(gameOver == false)
                 {
                 Console.WriteLine($"you have {turnsLeft} turns left");
-                Console.WriteLine($"The Mystery word is: \n" );
                 DashPrinter.printDashes(guessList, mysteryList);
-                Console.WriteLine("type '*' to quit");
-                string userCommand = Console.ReadLine().ToLower();
-                switch (userCommand)
+                Console.WriteLine("Please enter your guess! Or type '*' to quit");
+                string userInput = Console.ReadLine().ToLower();
+                if(userInput.Length > 1)
                 {
-                    case "*":
-                        Console.WriteLine("goodbye");
-                        gameOver = true;
-                        break;
-                    default:
-                        break;
-
+                    Console.WriteLine("Please only submit a single character!");
                 }
+                else if (userInput.Equals("*"))                   
+                {
+                    Console.WriteLine("goodbye");
+                    gameOver = true;
+                }
+                else
+                {
+                    char c = char.Parse(userInput);
+                    guessList.Add(c);
+                    bool iscorrect = LetterPlay.compare(c, mysteryList);
+                    if(iscorrect == true)
+                    {
+                        Console.WriteLine($"Yes! {c} is a letter in the mystery word!");
+                    }
+                    else
+                    {
+                        Console.WriteLine($"Sorry! {c} is NOT a letter in the mystery word!");
+                        turnsLeft -= 1;
+                    }
+                }         
             }
         }
     }

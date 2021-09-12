@@ -11,6 +11,7 @@ namespace Hangman_Game
 
         public static void printDashes(List<char> guessList, List<char> mysteryList)
         {
+          Console.WriteLine($"The Mystery word is: \n");
             for (int i = 0; i < mysteryList.Count; i++)
             {
                 if (guessList.Contains(mysteryList[i]))
@@ -19,8 +20,8 @@ namespace Hangman_Game
                 }
                 else
                 {
-                    //Console.Write("- ");
-                    Console.Write(mysteryList[i] + " ");
+                    Console.Write("- ");
+                    //Console.Write(mysteryList[i] + " ");
                 }
             }
             Console.Write("\n");
