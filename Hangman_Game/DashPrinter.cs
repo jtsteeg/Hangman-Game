@@ -21,7 +21,6 @@ namespace Hangman_Game
                 else
                 {
                     Console.Write("- ");
-                    //Console.Write(mysteryList[i] + " ");
                 }
             }
             Console.Write("\n");

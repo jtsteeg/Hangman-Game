@@ -10,7 +10,6 @@ namespace Hangman_Game
     {
 
         bool gameOver = false;
-        List<char> guessList = new List<char>();
 
         public HangmanGame()
         {
@@ -21,7 +20,7 @@ namespace Hangman_Game
             while (gameOver == false)
             {
                 Console.WriteLine($"you have {l.remainingTurns} turns left");
-                DashPrinter.printDashes(guessList, d.mysteryList);
+                DashPrinter.printDashes(l.guessList, d.mysteryList);
                 Console.WriteLine("Please enter your guess! Or type '*' to quit");
                 string userInput = Console.ReadLine().ToLower();
                 if (userInput.Length > 1)
@@ -36,10 +35,9 @@ namespace Hangman_Game
                 else
                 {
                     char c = char.Parse(userInput);
-                    guessList.Add(c);
                     l.compare(c, d.mysteryList);
                 }
-                gameOver = WinOrLose.compare(l.remainingTurns, d.mysteryList, guessList);
+                gameOver = WinOrLose.compare(l.remainingTurns, d.mysteryList, l.guessList);
             }
         }
     }

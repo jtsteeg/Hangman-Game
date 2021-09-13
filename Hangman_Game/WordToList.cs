@@ -12,7 +12,7 @@ namespace Hangman_Game
         public List<char> mysteryList { get; set; }
         public WordToList()
         {
-             wordLibrary = new List<string>() { "table", "chair", "lamp", "desk", "chandelier", "revolution", };
+             wordLibrary = new List<string>() { "table", "chair", "lamp", "desk", "chandelier", "bread", "silver", "revolution", };
         }
 
 
