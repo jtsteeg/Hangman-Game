@@ -8,6 +8,7 @@ namespace Hangman_Game
 {
     class LetterPlay
     {
+            public int remainingTurns { get; set; }
         //    string input;
         //    List<char> mysteryList;
         //    public LetterPlay(string input, List<char> mysteryList)

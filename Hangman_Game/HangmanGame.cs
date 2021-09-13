@@ -18,6 +18,8 @@ namespace Hangman_Game
         {
             var d = new WordToList();
             mysteryList = d.MakeList();
+            //var l = new LetterPlay();
+            //int x = l.remainingTurns;
             while(gameOver == false)
                 {
                 Console.WriteLine($"you have {turnsLeft} turns left");
@@ -47,8 +49,8 @@ namespace Hangman_Game
                         Console.WriteLine($"Sorry! {c} is NOT a letter in the mystery word!");
                         turnsLeft -= 1;
                     }
-                }         
+                }
+                gameOver = WinOrLose.compare(turnsLeft, mysteryList, guessList); 
             }
         }
     }
-}
