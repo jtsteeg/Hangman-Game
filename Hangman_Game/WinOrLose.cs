@@ -29,12 +29,36 @@ namespace Hangman_Game
         {
             if(isSubset(mysteryList, guessList) == true)
             {
-                Console.WriteLine("congratulations! you win the game!");
+                Console.Write(@"
+                                         _______________
+                                        |@@@@|     |####|
+                                        |@@@@|     |####|
+                                        |@@@@|     |####|
+                                        \@@@@|     |####/
+                                         \@@@|     |###/
+                                          `@@|_____|##'
+                                               (O)
+                                            .-'''''-.
+                                          .'  * * *  `.
+                                         :  *       *  :
+                                        : ~ ~ Y O U ~ ~ :
+                                        : ~ ~ W I N ~ ~ :
+                                         :  *       *  :
+                                          `.  * * *  .'
+                                            `-.....-'
+                      ");
                 return true;
             } 
             else if (turnsLeft < 1)
             {
-                Console.WriteLine("Sorry! you lose!");
+                Console.WriteLine(@"
+                                     _                     
+                                    | |                    
+                                    | | ___  ___  ___ _ __ 
+                                    | |/ _ \/ __|/ _ \ '__|
+                                    | | (_) \__ \  __/ |   
+                                    |_|\___/|___/\___|_|   
+                     ");
                 return true;
             }
             else
