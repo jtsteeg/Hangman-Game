@@ -23,7 +23,7 @@ namespace Hangman_Game
             return wordLibrary[i];
         }
 
-        public List<char> MakeList()
+        public void MakeList()
         {
             string mysteryWord = GetRandomWord();
             List<char> mysteryList = new List<char>();
@@ -32,8 +32,8 @@ namespace Hangman_Game
             {
                 mysteryList.Add(item);
             }
-
-            return mysteryList;
+            this.mysteryList = mysteryList;
+            //return mysteryList;
         }
     }
 }
