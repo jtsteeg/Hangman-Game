@@ -14,23 +14,23 @@ namespace Hangman_Game
         List<char> mysteryList = new List<char>();
         List<char> guessList = new List<char>();
 
-        public HangmanGame() 
+        public HangmanGame()
         {
             var d = new WordToList();
             mysteryList = d.MakeList();
             //var l = new LetterPlay();
             //int x = l.remainingTurns;
-            while(gameOver == false)
-                {
+            while (gameOver == false)
+            {
                 Console.WriteLine($"you have {turnsLeft} turns left");
                 DashPrinter.printDashes(guessList, mysteryList);
                 Console.WriteLine("Please enter your guess! Or type '*' to quit");
                 string userInput = Console.ReadLine().ToLower();
-                if(userInput.Length > 1)
+                if (userInput.Length > 1)
                 {
                     Console.WriteLine("Please only submit a single character!");
                 }
-                else if (userInput.Equals("*"))                   
+                else if (userInput.Equals("*"))
                 {
                     Console.WriteLine("goodbye");
                     gameOver = true;
@@ -40,7 +40,7 @@ namespace Hangman_Game
                     char c = char.Parse(userInput);
                     guessList.Add(c);
                     bool iscorrect = LetterPlay.compare(c, mysteryList);
-                    if(iscorrect == true)
+                    if (iscorrect == true)
                     {
                         Console.WriteLine($"Yes! {c} is a letter in the mystery word!");
                     }
@@ -50,7 +50,9 @@ namespace Hangman_Game
                         turnsLeft -= 1;
                     }
                 }
-                gameOver = WinOrLose.compare(turnsLeft, mysteryList, guessList); 
+                gameOver = WinOrLose.compare(turnsLeft, mysteryList, guessList);
             }
         }
     }
+}
+
