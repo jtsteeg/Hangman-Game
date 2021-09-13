@@ -9,6 +9,7 @@ namespace Hangman_Game
     class WordToList
     {
         private List<string> wordLibrary;
+        public List<char> mysteryList { get; set; }
         public WordToList()
         {
              wordLibrary = new List<string>() { "table", "chair", "lamp", "desk", "chandelier", "revolution", };

@@ -10,7 +10,6 @@ namespace Hangman_Game
     {
 
         bool gameOver = false;
-        int turnsLeft = 10;
         List<char> mysteryList = new List<char>();
         List<char> guessList = new List<char>();
 
@@ -18,11 +17,10 @@ namespace Hangman_Game
         {
             var d = new WordToList();
             mysteryList = d.MakeList();
-            //var l = new LetterPlay();
-            //int x = l.remainingTurns;
+            var l = new LetterPlay();
             while (gameOver == false)
             {
-                Console.WriteLine($"you have {turnsLeft} turns left");
+                Console.WriteLine($"you have {l.remainingTurns} turns left");
                 DashPrinter.printDashes(guessList, mysteryList);
                 Console.WriteLine("Please enter your guess! Or type '*' to quit");
                 string userInput = Console.ReadLine().ToLower();
@@ -39,18 +37,9 @@ namespace Hangman_Game
                 {
                     char c = char.Parse(userInput);
                     guessList.Add(c);
-                    bool iscorrect = LetterPlay.compare(c, mysteryList);
-                    if (iscorrect == true)
-                    {
-                        Console.WriteLine($"Yes! {c} is a letter in the mystery word!");
-                    }
-                    else
-                    {
-                        Console.WriteLine($"Sorry! {c} is NOT a letter in the mystery word!");
-                        turnsLeft -= 1;
-                    }
+                    l.compare(c, mysteryList);
                 }
-                gameOver = WinOrLose.compare(turnsLeft, mysteryList, guessList);
+                gameOver = WinOrLose.compare(l.remainingTurns, mysteryList, guessList);
             }
         }
     }

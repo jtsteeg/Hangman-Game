@@ -9,22 +9,22 @@ namespace Hangman_Game
     class LetterPlay
     {
             public int remainingTurns { get; set; }
-        //    string input;
-        //    List<char> mysteryList;
-        //    public LetterPlay(string input, List<char> mysteryList)
-        //    {
-        //        this.input = input;
-        //        this.mysteryList = mysteryList;
-        //    }
+        public LetterPlay()
+        {
+            remainingTurns = 10;
+        }
 
-        public static bool compare(char guess, List<char> mysteryList)
-        {           
-           if (mysteryList.Contains(guess))
+        public bool compare(char guess, List<char> mysteryList)
+        {
+            if (mysteryList.Contains(guess))
             {
+                Console.WriteLine($"Hooray! {guess} is a letter in the mystery word!");
                 return true;
             }
             else
             {
+                Console.WriteLine($"Sorry! {guess} is NOT a letter in the mystery word!");
+                remainingTurns -= 1;
                 return false;
             }
         }
