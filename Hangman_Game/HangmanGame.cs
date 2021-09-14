@@ -30,7 +30,7 @@ namespace Hangman_Game
                 else if (userInput.Equals("*"))
                 {
                     Console.WriteLine("goodbye");
-                    gameOver = true;
+                    System.Environment.Exit(0);
                 }
                 else
                 {
