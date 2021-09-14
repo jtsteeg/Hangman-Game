@@ -8,7 +8,6 @@ namespace Hangman_Game
 {
     class WordToList
     {
-        //private List<string> wordLibrary;
         public List<string> wordLibrary { get; set; }
         public List<char> mysteryList { get; set; }
         public WordToList()

@@ -8,7 +8,6 @@ namespace Hangman_Game
 {
     class DashPrinter
     {
-
         public static void printDashes(List<char> guessList, List<char> mysteryList)
         {
           Console.WriteLine($"The Mystery word is: \n");
